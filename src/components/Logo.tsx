@@ -8,7 +8,7 @@ const Logo = () => {
         <Heart className="h-8 w-8 text-primary" />
         <BarChart className="h-4 w-4 text-primary absolute bottom-0 right-0" />
       </div>
-      <span className="font-bold text-xl">Sentiment Sorcerer</span>
+      <span className="font-bold text-xl">Sentiment Info</span>
     </div>
   );
 };
