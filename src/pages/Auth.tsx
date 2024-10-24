@@ -1,14 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Lock, UserPlus } from 'lucide-react';
+import { Mail, Lock } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const Auth = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,11 +19,13 @@ const Auth = () => {
       title: "Success",
       description: "Authentication successful!",
     });
+    navigate('/dashboard');
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 flex items-center justify-center">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex flex-col bg-gray-100">
+      <main className="flex-grow p-4 flex items-center justify-center">
+        <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Welcome</CardTitle>
           <CardDescription>Sign in to your account or create a new one</CardDescription>
@@ -80,7 +85,9 @@ const Auth = () => {
             </TabsContent>
           </Tabs>
         </CardContent>
-      </Card>
+        </Card>
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -8,12 +8,14 @@ import SentimentChart from '../components/SentimentChart';
 import FeedbackList from '../components/FeedbackList';
 import ActionItems from '../components/ActionItems';
 import Logo from '../components/Logo';
+import Footer from '../components/Footer';
 
 const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen flex flex-col bg-gray-100">
+      <div className="flex-grow p-4">
       <header className="mb-8 flex justify-between items-center">
         <div>
           <Logo />
@@ -100,6 +102,8 @@ const Index = () => {
           </Card>
         </TabsContent>
       </Tabs>
+      </div>
+      <Footer />
     </div>
   );
 };
