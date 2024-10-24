@@ -5,13 +5,14 @@ import Logo from '../components/Logo';
 import Footer from '../components/Footer';
 import { 
   ArrowRight, 
-  Robot,
+  Bot,
   Target,
   TrendingUp,
   Users,
   Zap,
   Shield,
-  LineChart
+  LineChart,
+  Brain
 } from 'lucide-react';
 
 const Landing = () => {
@@ -74,7 +75,7 @@ const Landing = () => {
               </div>
               <div className="text-center group">
                 <div className="bg-primary/10 rounded-full p-6 mx-auto w-24 h-24 flex items-center justify-center mb-4 transform transition-transform group-hover:scale-110">
-                  <Robot className="h-12 w-12 text-primary" />
+                  <Bot className="h-12 w-12 text-primary" />
                 </div>
                 <h3 className="font-semibold mb-2">2. AI Analysis</h3>
                 <p className="text-gray-600">Process data through our AI engine</p>
