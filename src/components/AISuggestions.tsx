@@ -4,12 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { generateAISuggestions } from '../utils/aiService';
 import { useToast } from '../hooks/use-toast';
 
+type Priority = 'high' | 'medium' | 'low';
+
 interface Suggestion {
   id: number;
   title: string;
   description: string;
   confidence: number;
-  priority: 'high' | 'medium' | 'low';
+  priority: Priority;
 }
 
 const AISuggestions = () => {
@@ -24,7 +26,7 @@ const AISuggestions = () => {
   const fetchSuggestions = async () => {
     try {
       const aiSuggestions = await generateAISuggestions([]);
-      setSuggestions(aiSuggestions);
+      setSuggestions(aiSuggestions as Suggestion[]);
       toast({
         title: "AI Suggestions Updated",
         description: "New insights are available",

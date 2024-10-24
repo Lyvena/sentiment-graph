@@ -33,14 +33,14 @@ export const generateAISuggestions = async (feedbackData: any[]) => {
       title: "Response Time Improvement",
       description: "AI analysis shows increasing user frustration with response times. Consider implementing automated responses.",
       confidence: 0.85,
-      priority: "high"
+      priority: "high" as const
     },
     {
       id: 2,
       title: "Feature Enhancement",
       description: "Pattern analysis indicates users frequently requesting mobile integration. Consider prioritizing mobile development.",
       confidence: 0.75,
-      priority: "medium"
+      priority: "medium" as const
     }
   ];
   
