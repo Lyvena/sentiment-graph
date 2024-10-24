@@ -1,17 +1,27 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Activity, ChartBar, User, Settings, MessageCircle } from 'lucide-react';
+import { Activity, ChartBar, Settings, MessageCircle } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import SentimentChart from '../components/SentimentChart';
 import FeedbackList from '../components/FeedbackList';
 import ActionItems from '../components/ActionItems';
+import Logo from '../components/Logo';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800">AI-PGF Community Sentiment</h1>
-        <p className="text-gray-600">Track and analyze community feedback for continuous improvement</p>
+      <header className="mb-8 flex justify-between items-center">
+        <div>
+          <Logo />
+          <p className="text-gray-600 mt-2">Track and analyze community feedback for continuous improvement</p>
+        </div>
+        <Button onClick={() => navigate('/auth')} variant="outline">
+          Sign In
+        </Button>
       </header>
       
       <Tabs defaultValue="overview" className="space-y-4">
