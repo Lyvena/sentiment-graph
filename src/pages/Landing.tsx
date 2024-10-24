@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Logo from '../components/Logo';
+import Footer from '../components/Footer';
 import { ArrowRight, Heart, BarChart2, MessageSquare } from 'lucide-react';
 
 const Landing = () => {
